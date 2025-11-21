@@ -1,0 +1,30 @@
+[
+    {
+        "nome": "Interestelar",
+        "descricao": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço na tentativa de garantir a sobrevivência da humanidade.",
+        "ano": "2014",
+        "link": "#",
+        "imagem": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6cxlNBgvk.jpg"
+    },
+    {
+        "nome": "A Origem",
+        "descricao": "Um ladrão que rouba segredos corporativos através do uso da tecnologia de compartilhamento de sonhos recebe a tarefa inversa de plantar uma ideia na mente de um CEO.",
+        "ano": "2010",
+        "link": "#",
+        "imagem": "https://image.tmdb.org/t/p/w500/oYuLEt3zYd2x5FzB0f7x4A2N09a.jpg"
+    },
+    {
+        "nome": "The Witcher",
+        "descricao": "Geralt de Rívia, um caçador de monstros solitário, luta para encontrar seu lugar em um mundo onde as pessoas muitas vezes se provam mais perversas que as bestas.",
+        "ano": "2019",
+        "link": "#",
+        "imagem": "https://image.tmdb.org/t/p/w500/pUPwTbnAqg71a4pG2qI1ePSAQn.jpg"
+    },
+    {
+        "nome": "Stranger Things",
+        "descricao": "Quando um garoto desaparece, sua mãe, um chefe de polícia e seus amigos devem confrontar forças sobrenaturais aterrorizantes para trazê-lo de volta.",
+        "ano": "2016",
+        "link": "#",
+        "imagem": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8WcIRR2h4.jpg"
+    }
+]

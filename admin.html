@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="conta.css"> <!-- Reutilizando estilos da página de conta -->
+    <link rel="stylesheet" href="admin.css"> <!-- Novo CSS para o dashboard -->
+    <title>Admin - CineStream</title>
+    <script>
+        // Script de segurança: verifica se o usuário é admin. Se não for, redireciona.
+        if (localStorage.getItem('isAdmin') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body id="body">
+    <header>
+        <h1><a href="index.html" style="color: inherit; text-decoration: none;">CineStream</a></h1>
+        <a href="conta.html" id="botao-assinatura">Voltar para Conta</a>
+    </header>
+
+    <main>
+        <div class="admin-dashboard">
+            <!-- Coluna de Gerenciamento de Catálogo -->
+            <section class="secao-conta">
+                <h2>Gerenciar Catálogo</h2>
+                <div class="gerenciar-secao">
+                    <h3>Adicionar Novo Título</h3>
+                    <form id="form-adicionar">
+                        <input type="text" id="novo-nome" placeholder="Nome do Título" required>
+                        <input type="text" id="nova-imagem" placeholder="URL da Imagem do Pôster" required>
+                        <textarea id="nova-descricao" placeholder="Descrição" required></textarea>
+                        <input type="number" id="novo-ano" placeholder="Ano de Lançamento" required>
+                        <button type="submit" class="botao-gerenciar">Adicionar ao Catálogo</button>
+                    </form>
+                </div>
+                <div class="gerenciar-secao">
+                    <h3>Catálogo Atual</h3>
+                    <div id="lista-catalogo"></div>
+                </div>
+            </section>
+
+            <!-- Coluna de Gerenciamento de Usuários -->
+            <section class="secao-conta">
+                <h2>Gerenciar Usuários</h2>
+                <div class="gerenciar-secao">
+                    <h3>Adicionar Novo Usuário</h3>
+                    <form id="form-add-user">
+                        <input type="email" id="novo-email" placeholder="Email do Usuário" required>
+                        <input type="password" id="nova-senha" placeholder="Senha (mín. 6 caracteres)" required>
+                        <button type="submit" class="botao-gerenciar">Adicionar Usuário</button>
+                    </form>
+                </div>
+                <div class="gerenciar-secao">
+                    <h3>Usuários Cadastrados</h3>
+                    <div id="lista-usuarios"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const formAdicionar = document.getElementById('form-adicionar');
+        const listaCatalogo = document.getElementById('lista-catalogo');
+        const formAddUser = document.getElementById('form-add-user');
+        const listaUsuarios = document.getElementById('lista-usuarios');
+
+        let catalogo = JSON.parse(localStorage.getItem('catalogoCineStream')) || [];
+        let usuarios = JSON.parse(localStorage.getItem('usuariosCineStream')) || [];
+
+        function renderizarLista() {
+            listaCatalogo.innerHTML = '';
+            catalogo.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('admin-card');
+                itemDiv.innerHTML = `
+                    <img src="${item.imagem}" alt="Pôster de ${item.nome}">
+                    <div class="admin-card-info">
+                        <p>${item.nome}</p>
+                    </div>
+                    <button data-index="${index}" class="botao-remover">Remover</button>
+                `;
+                listaCatalogo.appendChild(itemDiv);
+            });
+        }
+
+        function renderizarUsuarios() {
+            listaUsuarios.innerHTML = '';
+            if (usuarios.length === 0) {
+                listaUsuarios.innerHTML = '<p>Nenhum usuário cadastrado.</p>';
+                return;
+            }
+            usuarios.forEach((user, index) => {
+                const userDiv = document.createElement('div');
+                userDiv.classList.add('admin-card');
+                const isAdminBadge = user.isAdmin ? '<span class="admin-badge">Admin</span>' : '';
+                userDiv.innerHTML = `
+                    <img src="https://i.pravatar.cc/150?u=${user.email}" alt="Avatar">
+                    <div class="admin-card-info">
+                        <p>${user.email} ${isAdminBadge}</p>
+                    </div>
+                    <button data-index="${index}" class="botao-remover-usuario" ${user.isAdmin ? 'disabled' : ''}>Remover</button>
+                `;
+                listaUsuarios.appendChild(userDiv);
+            });
+        }
+
+        formAdicionar.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const novoItem = {
+                nome: document.getElementById('novo-nome').value,
+                imagem: document.getElementById('nova-imagem').value,
+                descricao: document.getElementById('nova-descricao').value,
+                ano: document.getElementById('novo-ano').value,
+                link: "#"
+            };
+            catalogo.push(novoItem);
+            localStorage.setItem('catalogoCineStream', JSON.stringify(catalogo));
+            renderizarLista();
+            formAdicionar.reset();
+        });
+
+        listaCatalogo.addEventListener('click', (e) => {
+            if (e.target.classList.contains('botao-remover')) {
+                if (confirm('Tem certeza que deseja remover este item do catálogo?')) {
+                    const index = e.target.getAttribute('data-index');
+                    catalogo.splice(index, 1);
+                    localStorage.setItem('catalogoCineStream', JSON.stringify(catalogo));
+                    renderizarLista();
+                }
+            }
+        });
+
+        formAddUser.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('novo-email').value;
+            const password = document.getElementById('nova-senha').value;
+
+            if (password.length < 6) {
+                alert('A senha deve ter no mínimo 6 caracteres.');
+                return;
+            }
+
+            if (usuarios.find(user => user.email === email)) {
+                alert('Este email já está cadastrado.');
+                return;
+            }
+
+            usuarios.push({ email, password, isAdmin: false }); // Novos usuários não são admins
+            localStorage.setItem('usuariosCineStream', JSON.stringify(usuarios));
+            renderizarUsuarios();
+            formAddUser.reset();
+        });
+
+        listaUsuarios.addEventListener('click', (e) => {
+            if (e.target.classList.contains('botao-remover-usuario')) {
+                if (confirm('Tem certeza que deseja remover este usuário?')) {
+                    const index = e.target.getAttribute('data-index');
+                    usuarios.splice(index, 1);
+                    localStorage.setItem('usuariosCineStream', JSON.stringify(usuarios));
+                    renderizarUsuarios();
+                }
+            }
+        });
+
+        renderizarLista();
+        renderizarUsuarios();
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Imersão Alura</title>
+</head>
+<body id="body">
+    <header>
+        <a href="index.html">
+            <img src="img/imagem_2025-11-20_231311356-removebg-preview.png" alt="CineStream Logo" id="logo">
+        </a>
+        <div id="container-busca">
+            <input type="text" id="input-busca" placeholder="Busque por filmes, séries...">
+            <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
+        </div>
+        <div class="header-botoes">
+            <a href="#" id="botao-login">Entrar</a>
+            <a href="assinatura.html" id="botao-assinatura">Assine Agora</a>
+        </div>
+    </header>
+
+
+    <main id="card-container"></main>
+
+    <section class="cta-assinatura">
+        <h2>Pronto para assistir?</h2>
+        <p>Assine agora e tenha acesso ilimitado a filmes e séries.</p>
+        <a href="assinatura.html" class="botao-cta">Assine Agora</a>
+    </section>
+
+    <section class="disponivel-em">
+        <h2>Disponível nas suas telas favoritas</h2>
+        <div class="plataformas">
+            <div class="plataforma">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Logo Netflix"/>
+            </div>
+            <div class="plataforma">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/2560px-Amazon_Prime_Video_logo.svg.png" alt="Logo Amazon Prime Video"/>
+            </div>
+            <div class="plataforma">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/2560px-Disney%2B_logo.svg.png" alt="Logo Disney+"/>
+            </div>
+            <div class="plataforma">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/YouTube_social_white_squircle.svg" alt="Logo YouTube"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-button">&times;</button>
+            <h2>Entrar</h2>
+            <p>Acesse sua conta para continuar.</p>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Senha" required>
+                <button type="submit" class="botao-cta">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul class="footer-links">
+            <li>
+                <a href="https://www.linkedin.com/in/seu-perfil">LinkedIn</a>
+            </li>
+             <li>
+                <a href="https://twitter.com/seuperfil">Twitter</a>
+            </li>
+            <li>
+                <a href="https://github.com">GitHub</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

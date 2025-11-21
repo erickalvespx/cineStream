@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assinatura.css">
+    <title>Planos de Assinatura - CineStream</title>
+</head>
+<body id="body">
+    <header>
+        <h1><a href="index.html" style="color: inherit; text-decoration: none;">CineStream</a></h1>
+        <div>
+            <!-- Espaço vazio para manter o layout do header consistente -->
+        </div>
+        <a href="index.html" id="botao-assinatura">Voltar</a>
+    </header>
+
+    <main>
+        <section class="secao-planos">
+            <h2>Escolha o plano ideal para você</h2>
+            <div class="planos-container">
+                <div class="plano">
+                    <h3>Básico</h3>
+                    <p class="preco">R$ 19,90/mês</p>
+                    <ul>
+                        <li>Qualidade de vídeo Boa (720p)</li>
+                        <li>Assista em 1 tela por vez</li>
+                        <li>Downloads em 1 aparelho</li>
+                    </ul>
+                    <button class="botao-plano">Assinar</button>
+                </div>
+                <div class="plano recomendado">
+                    <h3>Padrão</h3>
+                    <p class="preco">R$ 29,90/mês</p>
+                    <ul>
+                        <li>Qualidade de vídeo Ótima (1080p)</li>
+                        <li>Assista em 2 telas ao mesmo tempo</li>
+                        <li>Downloads em 2 aparelhos</li>
+                    </ul>
+                    <button class="botao-plano">Assinar</button>
+                </div>
+                <div class="plano">
+                    <h3>Premium</h3>
+                    <p class="preco">R$ 39,90/mês</p>
+                    <ul>
+                        <li>Qualidade de vídeo Excepcional (4K+HDR)</li>
+                        <li>Assista em 4 telas ao mesmo tempo</li>
+                        <li>Downloads em 4 aparelhos</li>
+                    </ul>
+                    <button class="botao-plano">Assinar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Cadastro de Usuário -->
+    <div id="register-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-register-modal" class="close-button">&times;</button>
+            <h2>Crie sua Conta</h2>
+            <p>Falta pouco para você ter acesso ao melhor do cinema.</p>
+            <form id="register-form">
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Crie uma senha (mín. 6 caracteres)" required>
+                <button type="submit" class="botao-plano">Finalizar Assinatura</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Ajuda</a></li>
+        </ul>
+    </footer>
+    <script>
+        const registerModal = document.getElementById('register-modal');
+        const closeRegisterModalButton = document.getElementById('close-register-modal');
+        const registerForm = document.getElementById('register-form');
+        const botoesPlano = document.querySelectorAll('.botao-plano');
+        let planoSelecionado = '';
+
+        // Abre o modal de cadastro ao clicar em um plano
+        botoesPlano.forEach(botao => {
+            botao.addEventListener('click', (event) => {
+                const planoDiv = event.target.closest('.plano');
+                planoSelecionado = planoDiv.querySelector('h3').textContent;
+                registerModal.classList.remove('hidden');
+            });
+        });
+
+        // Lógica para fechar o modal
+        function closeRegisterModal() {
+            registerModal.classList.add('hidden');
+        }
+        closeRegisterModalButton.addEventListener('click', closeRegisterModal);
+        registerModal.addEventListener('click', (e) => {
+            if (e.target === registerModal) closeRegisterModal();
+        });
+
+        // Processa o cadastro do novo usuário
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const usuarios = JSON.parse(localStorage.getItem('usuariosCineStream')) || [];
+
+            if (password.length < 6) {
+                alert('A senha deve ter no mínimo 6 caracteres.');
+                return;
+            }
+            if (usuarios.find(user => user.email === email)) {
+                alert('Este email já está cadastrado. Tente fazer o login.');
+                return;
+            }
+
+            // Se a validação passar, cria o usuário e inicia a sessão
+            usuarios.push({ email, password, isAdmin: false });
+            localStorage.setItem('usuariosCineStream', JSON.stringify(usuarios));
+
+            // Inicia a sessão do novo usuário
+            localStorage.setItem('planoAtual', planoSelecionado);
+            localStorage.setItem('currentUserEmail', email);
+            localStorage.setItem('assinante', 'true');
+
+            alert('Conta criada com sucesso! Bem-vindo(a) ao CineStream.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
+                localStorage.setItem('assinante', 'true');
+                localStorage.setItem('planoAtual', nomePlano);
+                
+                // 2. Avisa o usuário e o redireciona
+                alert('Assinatura confirmada! Bem-vindo(a) ao CineStream. Você será redirecionado.');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

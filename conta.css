@@ -1,0 +1,158 @@
+.secao-conta {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.secao-conta h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.gerenciar-secao {
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 2rem 0;
+}
+
+.gerenciar-secao:first-of-type {
+    border-top: none;
+}
+
+.gerenciar-secao h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.gerenciar-secao p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.gerenciar-secao p strong {
+    color: var(--tertiary-color);
+    margin-right: 0.5rem;
+}
+
+.perfis-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.perfil {
+    text-align: center;
+    cursor: pointer;
+}
+
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.perfil span {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--tertiary-color);
+}
+
+.perfil:hover img {
+    border-color: var(--primary-color);
+}
+
+.perfil.add-perfil .add-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--tertiary-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.perfil.add-perfil:hover .add-icon {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.botao-gerenciar {
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;    
+    margin: 0 1rem 0.5rem 0; /* Adiciona margem para espaçamento em múltiplas linhas */
+    text-decoration: none;
+}
+
+.botao-gerenciar:hover {
+    background-color: #333;
+    border-color: var(--primary-color);
+}
+
+.danger-zone {
+    border-color: #a83232;
+}
+
+#botao-sair {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #a83232; /* Cor vermelha para indicar ação destrutiva */
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#botao-sair:hover {
+    background-color: #c74343;
+    transform: scale(1.05);
+}
+
+/* Estilos para o formulário no modal de cancelamento */
+#cancel-form input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+#confirm-cancel-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #a83232;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#confirm-cancel-button:hover {
+    background-color: #c74343;
+}
+
+/* Estilos para os novos formulários de alteração */
+#email-form input, #password-form input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
