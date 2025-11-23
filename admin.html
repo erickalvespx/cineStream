@@ -17,10 +17,7 @@
 <body id="body">
     <header>
         <h1><a href="index.html" style="color: inherit; text-decoration: none;">CineStream</a></h1>
-        <button class="hamburger" id="hamburger-menu"><span></span><span></span><span></span></button>
-        <nav class="nav-links" id="nav-links">
-            <a href="conta.html" id="botao-assinatura">Voltar para Conta</a>
-        </nav>
+        <a href="conta.html" id="botao-assinatura">Voltar para Conta</a>
     </header>
 
     <main>
@@ -183,11 +180,6 @@
 
         carregarCatalogoInicial(); // Carrega o catálogo do data.json ao iniciar
         renderizarUsuarios();
-    </script>
-    <script>
-        document.getElementById('hamburger-menu').addEventListener('click', function() {
-            document.getElementById('nav-links').classList.toggle('active');
-        });
     </script>
 </body>
 </html>

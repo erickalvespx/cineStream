@@ -150,29 +150,6 @@ div input:focus {
     border-color: var(--primary-color);
 }
 
-.hamburger {
-    display: none; /* Oculto em telas grandes */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
 #botao-assinatura {
     padding: 1rem 1.5rem;
     border-radius: 1rem;
@@ -493,32 +470,11 @@ article a:hover {
 }
 
 @media (max-width: 768px) {
-    header {
-        justify-content: space-between; /* Espaça logo e hambúrguer */
-        padding: 1rem;
+    header { /* Estilos para telas com largura máxima de 768px */
+        flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
+        padding: 1rem; /* Reduz o espaçamento interno */
     }
 
-    .hamburger {
-        display: block; /* Mostra o hambúrguer em telas pequenas */
-        z-index: 1001; /* Garante que fique acima do menu */
-    }
-
-    .nav-links {
-        display: none; /* Esconde os links por padrão */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(20, 20, 20, 0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-    }
-    .nav-links.active {
-        display: flex; /* Mostra o menu quando ativo */
-    }
     #logo {
         height: 2.2rem; /* Reduz o tamanho da logo em telas menores */
     }
