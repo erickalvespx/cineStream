@@ -3,6 +3,7 @@ const inputBusca = document.querySelector("#input-busca");
 const containerBusca = document.querySelector("#container-busca");
 const botaoAssinaturaHeader = document.querySelector("#botao-assinatura");
 const ctaAssinatura = document.querySelector(".cta-assinatura");
+const botaoLimparFiltro = document.querySelector("#botao-limpar-filtro");
 const botaoLogin = document.querySelector("#botao-login");
 const loginModal = document.querySelector("#login-modal");
 const closeModalButton = document.querySelector("#close-modal");
@@ -44,21 +45,14 @@ function verificarStatusAssinatura() {
 
 // Função para carregar os dados do JSON apenas uma vez.
 async function carregarDados() {
-    // Verifica se já temos dados no localStorage
-    const dadosLocais = localStorage.getItem('catalogoCineStream');
-
-    if (dadosLocais) {
-        // Se tiver, usa os dados locais
-        todosOsDados = JSON.parse(dadosLocais);
-    } else {
-        // Se não, busca do data.json e salva no localStorage para uso futuro
+    // Se os dados ainda não foram carregados, busca do arquivo data.json
+    if (todosOsDados.length === 0) {
         try {
             const resposta = await fetch("data.json");
             todosOsDados = await resposta.json();
-            localStorage.setItem('catalogoCineStream', JSON.stringify(todosOsDados));
         } catch (error) {
             console.error("Erro ao carregar os dados:", error);
-            todosOsDados = []; // Garante que não teremos dados quebrados
+            todosOsDados = []; // Garante que não teremos dados quebrados em caso de erro
         }
     }
 }
@@ -70,6 +64,9 @@ async function iniciarBusca() {
     const dadosFiltrados = todosOsDados.filter(dado =>
         dado.nome.toLowerCase().includes(termoBusca)
     );
+
+    // Se o usuário está buscando, o filtro de tag é removido
+    botaoLimparFiltro.classList.add('hidden');
 
     renderizarCards(dadosFiltrados);
 }
@@ -83,15 +80,51 @@ function renderizarCards(dadosParaRenderizar) {
 
     for (let dado of dadosParaRenderizar) {
         let article = document.createElement('article');
+        article.classList.add('card'); // Adiciona a classe 'card' ao article
+
+        // Cria o HTML para as tags, se elas existirem
+        let tagsHTML = '';
+        if (dado.tags && Array.isArray(dado.tags) && dado.tags.length > 0) {
+            tagsHTML = `
+                <div class="card-tags">
+                    ${dado.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            `;
+        }
+
         article.innerHTML = `
-            <img src="${dado.imagem}" alt="Pôster de ${dado.nome}">
-            <h2>${dado.nome}</h2>
-            <p>${dado.descricao}</p>
-            <p><strong>Ano de criação:</strong> ${dado.ano}</p>
-            <a href="${dado.link}">Leia mais</a>
+            <img class="card-imagem" src="${dado.imagem}" alt="Pôster de ${dado.nome}" />
+            <div class="card-content">
+                <h2 class="card-titulo">${dado.nome}</h2>
+                <p class="card-descricao">${dado.descricao}</p>
+                <p><strong>Ano:</strong> ${dado.ano || dado.data_criacao}</p>
+                ${tagsHTML}
+                <a href="${dado.link}">Leia mais</a>
+            </div>
         `;
 
         cardContainer.appendChild(article);
+    }
+}
+
+// Função para filtrar os cards ao clicar em uma tag
+function configurarFiltroPorTag() {
+    if (cardContainer) {
+        cardContainer.addEventListener('click', async (event) => {
+            // Verifica se o elemento clicado é de fato uma tag
+            if (event.target.classList.contains('tag')) {
+                inputBusca.value = ''; // Limpa o campo de busca
+                const tagName = event.target.textContent;
+                await carregarDados(); // Garante que os dados estão carregados
+                const dadosFiltrados = todosOsDados.filter(dado =>
+                    dado.tags && dado.tags.includes(tagName)
+                );
+                renderizarCards(dadosFiltrados);
+
+                // Mostra o botão de limpar filtro
+                botaoLimparFiltro.classList.remove('hidden');
+            }
+        });
     }
 }
 
@@ -99,6 +132,22 @@ function renderizarCards(dadosParaRenderizar) {
 document.addEventListener('DOMContentLoaded', () => {
     inicializarUsuarios();
     verificarStatusAssinatura();
+
+    // Adiciona o listener para o campo de busca funcionar em tempo real
+    if (inputBusca) {
+        inputBusca.addEventListener('input', iniciarBusca);
+    }
+
+    // Configura o listener para os cliques nas tags
+    configurarFiltroPorTag();
+
+    // Configura o listener para o botão de limpar filtro
+    if (botaoLimparFiltro) {
+        botaoLimparFiltro.addEventListener('click', () => {
+            botaoLimparFiltro.classList.add('hidden');
+            iniciarBusca(); // Chama a busca com o campo vazio, mostrando todos os cards
+        });
+    }
 });
 
 // --- Lógica do Modal de Login ---

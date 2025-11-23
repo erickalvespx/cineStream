@@ -109,6 +109,25 @@ div input:focus {
     display: none;
 }
 
+/* Botão para limpar o filtro de tags */
+#botao-limpar-filtro {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--tertiary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#botao-limpar-filtro:hover {
+    background-color: #333;
+}
+
 .header-botoes {
     display: flex;
     gap: 1rem;
@@ -181,11 +200,10 @@ main::-webkit-scrollbar-thumb:hover {
 article {
     background: none; /* Sem cor de fundo */
     border-radius: 0; /* Sem bordas arredondadas */
-    padding: 0; /* Remove o padding */
-    padding: 0 1rem; /* Espaçamento interno nos lados */
+    padding: 0; /* Padding será aplicado internamente */
     margin-bottom: 1.25rem; /* Margem inferior */
     box-shadow: none; /* Sem sombra */
-    transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
+    transition: transform 0.3s ease; /* Transição suave */
     border-bottom: 1px solid var(--bg-color); /* Borda inferior */
     padding-bottom: 1rem; /* Espaçamento interno inferior */
     flex-shrink: 0; /* Impede que os cards encolham */
@@ -197,12 +215,18 @@ article {
     border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
-article img {
+/* Container para o conteúdo do card */
+.card-content {
+    padding: 0 1rem; /* Adiciona espaçamento lateral interno */
+}
+
+.card-imagem {
     width: 100%; /* Imagem ocupa 100% da largura do card */
     height: 350px; /* Altura fixa para as imagens */
     object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     margin-bottom: 1rem;
+    display: block; /* Garante que a imagem se comporte como um bloco */
 }
 
 article:hover {
@@ -210,7 +234,7 @@ article:hover {
     cursor: pointer; /* Muda o cursor para uma mão */
 }
 
-article h2 {
+.card-titulo {
     margin-top: 0.5rem; /* Pequena margem superior */
     font-weight: 600; /* Peso da fonte */
     font-size: 1.6rem; /* Tamanho da fonte */
@@ -220,7 +244,7 @@ article h2 {
     color: var(--primary-color); /* Cor do texto */
 }
 
-article p {
+.card-descricao, article p {
     margin: 0.5rem 0; /* Margem superior e inferior */
     line-height: 1.6; /* Altura da linha para melhor legibilidade */
     font-size: 1rem; /* Tamanho da fonte */
@@ -241,6 +265,34 @@ article a {
 
 article a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.card-tags {
+    margin: 1rem 0; /* Espaçamento acima e abaixo do container de tags */
+    display: flex;
+    flex-wrap: wrap; /* Permite que as tags quebrem para a próxima linha */
+    gap: 0.5rem; /* Espaçamento entre as tags */
+}
+
+.tag {
+    background-color: #333; /* Cor de fundo da tag */
+    color: var(--secondary-color); /* Cor do texto da tag */
+    padding: 0.25rem 0.6rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Bordas arredondadas */
+    font-size: 0.75rem; /* Tamanho da fonte */
+    font-weight: 500;
+    white-space: nowrap; /* Impede que o texto da tag quebre */
+    border: 1px solid #444;
+}
+.tag:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+/* Classe genérica para esconder elementos */
+.hidden {
+    display: none !important;
 }
 
 .cta-assinatura {

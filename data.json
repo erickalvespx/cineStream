@@ -3,28 +3,366 @@
         "nome": "Interestelar",
         "descricao": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço na tentativa de garantir a sobrevivência da humanidade.",
         "ano": "2014",
-        "link": "#",
-        "imagem": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6cxlNBgvk.jpg"
+        "link": "https://www.primevideo.com/detail/0I61Y246A46Q826S1P3R2C0S5E/ref=atv_dl_rdr",
+        "imagem": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6cxlNBgvk.jpg",
+        "tags": [
+            "Ficção Científica",
+            "Aventura Espacial",
+            "Drama",
+            "Filme"
+        ]
     },
     {
         "nome": "A Origem",
         "descricao": "Um ladrão que rouba segredos corporativos através do uso da tecnologia de compartilhamento de sonhos recebe a tarefa inversa de plantar uma ideia na mente de um CEO.",
         "ano": "2010",
-        "link": "#",
-        "imagem": "https://image.tmdb.org/t/p/w500/oYuLEt3zYd2x5FzB0f7x4A2N09a.jpg"
+        "link": "https://www.max.com/br/pt/movies/a-origem/a77a3a3e-9a07-4233-8169-1949dd53930b",
+        "imagem": "https://image.tmdb.org/t/p/w500/oYuLEt3zYd2x5FzB0f7x4A2N09a.jpg",
+        "tags": [
+            "Ficção Científica",
+            "Ação",
+            "Thriller",
+            "Sonhos",
+            "Filme"
+        ]
     },
     {
         "nome": "The Witcher",
         "descricao": "Geralt de Rívia, um caçador de monstros solitário, luta para encontrar seu lugar em um mundo onde as pessoas muitas vezes se provam mais perversas que as bestas.",
         "ano": "2019",
-        "link": "#",
-        "imagem": "https://image.tmdb.org/t/p/w500/pUPwTbnAqg71a4pG2qI1ePSAQn.jpg"
+        "link": "https://www.netflix.com/title/80189599",
+        "imagem": "https://image.tmdb.org/t/p/w500/pUPwTbnAqg71a4pG2qI1ePSAQn.jpg",
+        "tags": [
+            "Fantasia",
+            "Aventura",
+            "Série",
+            "Monstros"
+        ]
     },
     {
         "nome": "Stranger Things",
         "descricao": "Quando um garoto desaparece, sua mãe, um chefe de polícia e seus amigos devem confrontar forças sobrenaturais aterrorizantes para trazê-lo de volta.",
         "ano": "2016",
-        "link": "#",
-        "imagem": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8WcIRR2h4.jpg"
-    }
+        "link": "https://www.netflix.com/title/80057281",
+        "imagem": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8WcIRR2h4.jpg",
+        "tags": [
+            "Ficção Científica",
+            "Terror",
+            "Mistério",
+            "Anos 80",
+            "Série"
+        ]
+    },
+    {
+    "nome": "O Mandaloriano",
+    "descricao": "Um caçador de recompensas solitário opera nos confins da galáxia, longe da autoridade da Nova República. Parte do universo Star Wars.",
+    "data_criacao": "2019",
+    "link": "https://www.disneyplus.com/series/the-mandalorian",
+    "tags": [
+      "Aventura Espacial",
+      "Ficção Científica",
+      "Disney+",
+      "Star Wars",
+      "Série"
+    ]
+  },
+  {
+    "nome": "Parasita",
+    "descricao": "A família Kim, desempregada, se infiltra na vida da rica família Park. Uma sátira social que aborda a luta de classes.",
+    "data_criacao": "2019",
+    "link": "https://www.amazon.com/Parasite",
+    "tags": [
+      "Drama",
+      "Thriller Social",
+      "Vencedor do Oscar",
+      "Cinema Coreano"
+    ]
+  },
+  {
+    "nome": "O Gambito da Rainha",
+    "descricao": "Acompanha a ascensão de uma órfã prodígio do xadrez nos anos 1950 e 60, enquanto ela lida com o vício.",
+    "data_criacao": "2020",
+    "link": "https://www.netflix.com/title/80234304",
+    "tags": [
+      "Drama Histórico",
+      "Minissérie",
+      "Xadrez",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Fleabag",
+    "descricao": "Uma mulher sarcástica e sexualmente ativa em Londres lida com a dor e a disfunção, muitas vezes quebrando a quarta parede.",
+    "data_criacao": "2016",
+    "link": "https://www.amazon.com/Fleabag",
+    "tags": [
+      "Comédia Dramática",
+      "Série Britânica",
+      "Amazon Prime Video",
+      "Sarcasmo"
+    ]
+  },
+  {
+    "nome": "The Boys",
+    "descricao": "Um grupo de vigilantes se propõe a derrubar super-heróis corruptos que abusam de seus superpoderes.",
+    "data_criacao": "2019",
+    "link": "https://www.primevideo.com/detail/The-Boys",
+    "tags": [
+      "Super-Heróis",
+      "Sátira",
+      "Ação",
+      "Amazon Prime Video",
+      "Distopia"
+    ]
+  },
+  {
+    "nome": "Soul",
+    "descricao": "Um professor de música que sonha em tocar jazz tem um acidente e sua alma é transportada para o 'Seminário You'.",
+    "data_criacao": "2020",
+    "link": "https://www.disneyplus.com/movies/soul",
+    "tags": [
+      "Animação",
+      "Fantasia",
+      "Pixar",
+      "Jazz",
+      "Disney+"
+    ]
+  },
+  {
+    "nome": "Mad Max: Estrada da Fúria",
+    "descricao": "No futuro pós-apocalíptico, Max se junta a uma imperatriz para fugir de um senhor da guerra e de sua cidadela.",
+    "data_criacao": "2015",
+    "link": "https://www.youtube.com/watch?v=hEJnMQG9F8M",
+    "tags": [
+      "Ação Pós-Apocalíptica",
+      "Distopia",
+      "Ficção Científica",
+      "Cinema"
+    ]
+  },
+  {
+    "nome": "Dark",
+    "descricao": "Quando duas crianças desaparecem em uma pequena cidade alemã, o passado, presente e futuro se interligam em um complexo mistério.",
+    "data_criacao": "2017",
+    "link": "https://www.netflix.com/title/80100172",
+    "tags": [
+      "Ficção Científica",
+      "Viagem no Tempo",
+      "Mistério",
+      "Netflix",
+      "Série Alemã"
+    ]
+  },
+  {
+    "nome": "La Casa de Papel",
+    "descricao": "Um grupo de ladrões orquestra o assalto mais perfeito da história da Espanha, liderados por um mestre conhecido como 'O Professor'.",
+    "data_criacao": "2017",
+    "link": "https://www.netflix.com/title/80192098",
+    "tags": [
+      "Assalto",
+      "Suspense",
+      "Ação",
+      "Série Espanhola",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Vingadores: Ultimato",
+    "descricao": "Os Vingadores sobreviventes devem reverter o estalar de dedos de Thanos, reunindo-se para uma última missão.",
+    "data_criacao": "2019",
+    "link": "https://www.disneyplus.com/movies/avengers-endgame",
+    "tags": [
+      "Super-Heróis",
+      "Ação",
+      "MCU",
+      "Fantasia",
+      "Disney+"
+    ]
+  },
+  {
+    "nome": "O Poderoso Chefão",
+    "descricao": "O patriarca de uma família do crime organizada decide passar o controle de seu império para seu filho relutante.",
+    "data_criacao": "1972",
+    "link": "https://www.amazon.com/The-Godfather",
+    "tags": [
+      "Clássico",
+      "Drama Criminal",
+      "Máfia",
+      "Trilogia"
+    ]
+  },
+  {
+    "nome": "Making a Murderer",
+    "descricao": "Um olhar aprofundado na história de Steven Avery, um homem preso injustamente e depois acusado de outro crime hediondo.",
+    "data_criacao": "2015",
+    "link": "https://www.netflix.com/title/80000770",
+    "tags": [
+      "Documentário Criminal",
+      "Investigação",
+      "True Crime",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Exterminador do Futuro 2: O Julgamento Final",
+    "descricao": "Um ciborgue do futuro é enviado de volta para proteger um jovem John Connor do Exterminador mais avançado.",
+    "data_criacao": "1991",
+    "link": "https://www.youtube.com/watch?v=lwuX2W7210U",
+    "tags": [
+      "Ficção Científica",
+      "Ação",
+      "Clássico",
+      "Cyberpunk"
+    ]
+  },
+  {
+    "nome": "Loki",
+    "descricao": "Loki, o Deus da Travessura, se envolve com a Autoridade de Variação Temporal após roubar o Tesseract.",
+    "data_criacao": "2021",
+    "link": "https://www.disneyplus.com/series/loki",
+    "tags": [
+      "Fantasia",
+      "Viagem no Tempo",
+      "MCU",
+      "Série",
+      "Disney+"
+    ]
+  },
+  {
+    "nome": "The Crown",
+    "descricao": "Crônica a vida da Rainha Elizabeth II desde seu casamento em 1947 até o início do século 21.",
+    "data_criacao": "2016",
+    "link": "https://www.netflix.com/title/80025678",
+    "tags": [
+      "Drama Histórico",
+      "Realeza Britânica",
+      "Biografia",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Whiplash: Em Busca da Perfeição",
+    "descricao": "Um jovem e ambicioso baterista de jazz se esforça para alcançar a grandeza sob a tutela de um instrutor abusivo e implacável.",
+    "data_criacao": "2014",
+    "link": "https://www.amazon.com/Whiplash",
+    "tags": [
+      "Drama Musical",
+      "Obsessão",
+      "Jovem Adulto",
+      "Cinema"
+    ]
+  },
+  {
+    "nome": "Good Omens",
+    "descricao": "Um anjo e um demônio unem forças para prevenir o apocalipse iminente, pois se acostumaram com a vida na Terra.",
+    "data_criacao": "2019",
+    "link": "https://www.primevideo.com/detail/Good-Omens",
+    "tags": [
+      "Fantasia",
+      "Comédia",
+      "Neil Gaiman",
+      "Amazon Prime Video"
+    ]
+  },
+  {
+    "nome": "Moana",
+    "descricao": "Uma jovem havaiana parte em uma perigosa missão para salvar seu povo, encontrando o semideus Maui no caminho.",
+    "data_criacao": "2016",
+    "link": "https://www.disneyplus.com/movies/moana",
+    "tags": [
+      "Animação",
+      "Musical",
+      "Aventura",
+      "Disney",
+      "Família"
+    ]
+  },
+  {
+    "nome": "Peaky Blinders",
+    "descricao": "No rescaldo da Primeira Guerra Mundial, uma notória gangue em Birmingham é liderada pelo ambicioso Tommy Shelby.",
+    "data_criacao": "2013",
+    "link": "https://www.netflix.com/title/80002479",
+    "tags": [
+      "Drama Criminal",
+      "Gangues",
+      "História",
+      "Reino Unido",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Seinfeld",
+    "descricao": "Uma 'série sobre nada', segue a vida cômica e cotidiana do comediante Jerry Seinfeld e seus amigos em Nova York.",
+    "data_criacao": "1989",
+    "link": "https://www.netflix.com/title/70153373",
+    "tags": [
+      "Comédia",
+      "Sitcom",
+      "Clássico da TV",
+      "Netflix"
+    ]
+  },
+  {
+    "nome": "Homecoming",
+    "descricao": "Uma assistente social que trabalha em uma instalação que ajuda soldados a fazer a transição para a vida civil descobre uma conspiração.",
+    "data_criacao": "2018",
+    "link": "https://www.primevideo.com/detail/Homecoming",
+    "tags": [
+      "Thriller Psicológico",
+      "Suspense",
+      "Série Original",
+      "Amazon Prime Video"
+    ]
+  },
+  {
+    "nome": "Raya e o Último Dragão",
+    "descricao": "Uma guerreira solitária se propõe a encontrar o último dragão para salvar seu mundo e reunir seu povo dividido.",
+    "data_criacao": "2021",
+    "link": "https://www.disneyplus.com/movies/raya-and-the-last-dragon",
+    "tags": [
+      "Animação",
+      "Fantasia",
+      "Aventura",
+      "Disney",
+      "Família"
+    ]
+  },
+  {
+    "nome": "Breaking Bad",
+    "descricao": "Um professor de química do ensino médio diagnosticado com câncer começa a produzir e vender metanfetamina para garantir o futuro de sua família.",
+    "data_criacao": "2008",
+    "link": "https://www.netflix.com/title/70143836",
+    "tags": [
+      "Drama",
+      "Crime",
+      "Suspense",
+      "Clássico Moderno",
+      "Série"
+    ]
+  },
+  {
+    "nome": "O Senhor dos Anéis: A Sociedade do Anel",
+    "descricao": "Um hobbit recebe um anel mágico e parte em uma épica jornada para destruí-lo antes que o Lorde das Trevas Sauron o use para dominar a Terra Média.",
+    "data_criacao": "2001",
+    "link": "https://www.amazon.com/The-Fellowship-of-the-Ring",
+    "tags": [
+      "Fantasia Épica",
+      "Aventura",
+      "Trilogia",
+      "Cinema"
+    ]
+  },
+  {
+    "nome": "Black Mirror",
+    "descricao": "Série de antologia que explora um futuro próximo, onde a maior invenção da humanidade colide com seus instintos mais sombrios.",
+    "data_criacao": "2011",
+    "link": "https://www.netflix.com/title/70264888",
+    "tags": [
+      "Ficção Científica",
+      "Antologia",
+      "Distopia",
+      "Tecnologia",
+      "Netflix"
+    ]
+  }
 ]

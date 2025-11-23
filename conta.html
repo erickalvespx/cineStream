@@ -243,12 +243,21 @@
             const emailSalvo = localStorage.getItem('currentUserEmail') || 'Não encontrado';
             const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
-            document.getElementById('plano-atual-nome').textContent = planoSalvo;
             document.getElementById('user-email').textContent = emailSalvo;
 
             const adminButton = document.querySelector('a[href="admin.html"]');
-            if (adminButton && !isAdmin) {
-                adminButton.style.display = 'none';
+            const alterarPlanoButton = document.querySelector('a[href="assinatura.html"]');
+            const dangerZone = document.querySelector('.danger-zone');
+
+            if (isAdmin) {
+                // Garante que o admin sempre tenha o melhor plano e não possa alterá-lo
+                localStorage.setItem('planoAtual', 'Premium');
+                document.getElementById('plano-atual-nome').textContent = 'Premium (Admin)';
+                if (alterarPlanoButton) alterarPlanoButton.style.display = 'none';
+                if (dangerZone) dangerZone.style.display = 'none'; // Oculta a opção de cancelar assinatura
+            } else {
+                document.getElementById('plano-atual-nome').textContent = planoSalvo;
+                if (adminButton) adminButton.style.display = 'none';
             }
         });
     </script>

@@ -66,8 +66,22 @@
         const formAddUser = document.getElementById('form-add-user');
         const listaUsuarios = document.getElementById('lista-usuarios');
 
-        let catalogo = JSON.parse(localStorage.getItem('catalogoCineStream')) || [];
+        let catalogo = [];
         let usuarios = JSON.parse(localStorage.getItem('usuariosCineStream')) || [];
+
+        // Função para carregar o catálogo sempre a partir do data.json
+        async function carregarCatalogoInicial() {
+            try {
+                const response = await fetch('data.json');
+                catalogo = await response.json();
+                // Salva no localStorage para que outras páginas possam usar, mas a admin sempre recarrega do arquivo.
+                localStorage.setItem('catalogoCineStream', JSON.stringify(catalogo));
+                renderizarLista();
+            } catch (error) {
+                console.error('Falha ao carregar o catálogo de data.json:', error);
+                listaCatalogo.innerHTML = '<p>Erro ao carregar o catálogo. Verifique o console.</p>';
+            }
+        }
 
         function renderizarLista() {
             listaCatalogo.innerHTML = '';
@@ -164,7 +178,7 @@
             }
         });
 
-        renderizarLista();
+        carregarCatalogoInicial(); // Carrega o catálogo do data.json ao iniciar
         renderizarUsuarios();
     </script>
 </body>
