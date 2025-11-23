@@ -10,7 +10,10 @@
 <body id="body">
     <header>
         <h1><a href="index.html" style="color: inherit; text-decoration: none;">CineStream</a></h1>
-        <a href="index.html" id="botao-assinatura">Voltar ao Início</a>
+        <button class="hamburger" id="hamburger-menu"><span></span><span></span><span></span></button>
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" id="botao-assinatura">Voltar ao Início</a>
+        </nav>
     </header>
 
     <main>
@@ -267,6 +270,11 @@
                 document.getElementById('plano-atual-nome').textContent = planoSalvo;
                 if (adminButton) adminButton.style.display = 'none';
             }
+        });
+    </script>
+    <script>
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
         });
     </script>
 </body>

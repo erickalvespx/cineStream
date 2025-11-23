@@ -11,15 +11,18 @@
         <a href="index.html">
             <img src="img/imagem_2025-11-20_231311356-removebg-preview.png" alt="CineStream Logo" id="logo">
         </a>
-        <div id="container-busca">
-            <input type="text" id="input-busca" placeholder="Busque por filmes, séries...">
-            <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
-            <button id="botao-limpar-filtro" class="hidden">Limpar Filtro</button>
-        </div>
-        <div class="header-botoes">
-            <a href="#" id="botao-login">Entrar</a>
-            <a href="assinatura.html" id="botao-assinatura">Assine Agora</a>
-        </div>
+        <button class="hamburger" id="hamburger-menu"><span></span><span></span><span></span></button>
+        <nav class="nav-links" id="nav-links">
+            <div id="container-busca">
+                <input type="text" id="input-busca" placeholder="Busque por filmes, séries...">
+                <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
+                <button id="botao-limpar-filtro" class="hidden">Limpar Filtro</button>
+            </div>
+            <div class="header-botoes">
+                <a href="#" id="botao-login">Entrar</a>
+                <a href="assinatura.html" id="botao-assinatura">Assine Agora</a>
+            </div>
+        </nav>
     </header>
 
 
@@ -77,5 +80,10 @@
         </ul>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
