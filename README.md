@@ -88,6 +88,14 @@ O projeto utiliza o `localStorage` do navegador para simular um banco de dados e
 
 Para testar as funcionalidades de administrador, siga os passos descritos na seção **Fluxo do Administrador**.
 
+## ⚠️ Limitações Importantes
+
+Este projeto utiliza `localStorage` para simular um banco de dados, o que traz algumas limitações:
+
+- **Dados Locais**: Os dados (usuários, catálogo, etc.) são salvos apenas no navegador e no dispositivo onde são criados. Não há sincronização entre diferentes computadores ou entre um PC e um dispositivo móvel.
+- **Persistência**: Limpar o cache do navegador ou os dados do site irá apagar todas as informações salvas.
+- **Segurança**: O `localStorage` não é um local seguro para armazenar dados sensíveis como senhas em um projeto real.
+
 ---
 
 *Este projeto foi desenvolvido como parte de um estudo prático de desenvolvimento web front-end, focando na criação de uma aplicação de página única (SPA) simulada com HTML, CSS e JavaScript puro.*
