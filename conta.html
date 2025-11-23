@@ -142,11 +142,19 @@
             const usuarioAtual = usuarios.find(user => user.email === emailLogado);
 
             if (usuarioAtual && usuarioAtual.password === password) {
+                // Encontra o índice do usuário e o remove da lista
+                const usuarioIndex = usuarios.findIndex(user => user.email === emailLogado);
+                if (usuarioIndex > -1) {
+                    usuarios.splice(usuarioIndex, 1);
+                }
+
+                // Salva a lista de usuários atualizada e limpa a sessão
+                localStorage.setItem('usuariosCineStream', JSON.stringify(usuarios));
                 localStorage.removeItem('assinante');
                 localStorage.removeItem('planoAtual');
                 localStorage.removeItem('currentUserEmail');
                 localStorage.removeItem('isAdmin');
-                alert('Sua assinatura foi cancelada. Você será redirecionado para a página inicial.');
+                alert('Sua conta e assinatura foram canceladas. Você será redirecionado para a página inicial.');
                 window.location.href = 'index.html';
             } else {
                 alert('Senha incorreta. Ação cancelada.');
