@@ -29,9 +29,6 @@ header {
     display: flex; /* Habilita o layout flexbox */
     align-items: center; /* Alinha os itens verticalmente ao centro */
     justify-content: space-around; /* Distribui os itens com espaço ao redor */
-    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
-    top: 0; /* Posição do topo quando sticky */
-    background: var(--bg-color); /* Cor de fundo do cabeçalho */
     z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos */
     border-bottom: 1px solid var(--bg-color); /* Adiciona uma borda inferior */
     gap: 1rem; /* Espaçamento entre os elementos flex */
